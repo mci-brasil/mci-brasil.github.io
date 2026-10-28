@@ -1,4 +1,4 @@
-import { auth, db, EMAIL_ADMIN, traduzErro } from './firebase.js';
+import { auth, db, EMAIL_ADMIN, ehAdmin, traduzErro } from './firebase.js';
 import {
   onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   sendEmailVerification, sendPasswordResetEmail, signOut,
@@ -139,8 +139,7 @@ $('salvar-mural').onclick = async () => {
 async function atualizar(user) {
   $('sair').classList.toggle('oculto', !user);
   if (!user) return mostrar('v-login');
-  if (user.email !== EMAIL_ADMIN) return mostrar('v-negado');
-  if (!user.emailVerified) return mostrar('v-verificar');
+  if (!ehAdmin(user)) return mostrar(user.email === EMAIL_ADMIN ? 'v-verificar' : 'v-negado');
 
   mostrar('v-carregando');
   try {

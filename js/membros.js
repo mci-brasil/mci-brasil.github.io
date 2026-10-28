@@ -1,4 +1,4 @@
-import { auth, db, EMAIL_ADMIN, traduzErro } from './firebase.js';
+import { auth, db, EMAIL_ADMIN, ehAdmin, traduzErro } from './firebase.js';
 import {
   onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   sendEmailVerification, sendPasswordResetEmail, signOut,
@@ -183,7 +183,7 @@ async function atualizar(user) {
     posicionarFormulario(false);
     return mostrar('v-fora');
   }
-  if (user.email === EMAIL_ADMIN) return mostrar('v-admin');
+  if (ehAdmin(user) || user.email === EMAIL_ADMIN) return mostrar('v-admin');
 
   mostrar('v-carregando');
   try {

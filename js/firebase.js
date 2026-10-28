@@ -19,6 +19,13 @@ export const db = getFirestore(app);
 
 export const EMAIL_ADMIN = 'contato.mci2026@gmail.com';
 
+// Contas de administrador pelo ID. Precisa bater com a lista em firebase/firestore.rules.
+const ADMIN_UIDS = ['B9aZS2Dya2NzgN336xdsmBIhAo32'];
+
+export function ehAdmin(user) {
+  return !!user && (ADMIN_UIDS.includes(user.uid) || (user.email === EMAIL_ADMIN && user.emailVerified));
+}
+
 // Mensagens de erro do Firebase em português simples.
 export function traduzErro(e) {
   const c = (e && e.code) || '';
