@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Administração · MCI</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/membros.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <a class="marca" href="index.html"><img src="img/favicon.png" alt=""><span>MCI</span></a>
+    <div class="acoes">
+      <a href="membros.html">Membros</a>
+      <button id="sair" class="oculto">Sair</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Administração</h1>
+  <p class="sub">Análise de pedidos de adesão</p>
+
+  <div id="v-carregando" class="caixa status"><p>Carregando…</p></div>
+
+  <div id="v-login" class="caixa oculto">
+    <form id="f-login" novalidate>
+      <label for="a-email">E-mail da administração</label>
+      <input id="a-email" type="email" autocomplete="email" required>
+      <label for="a-senha">Senha</label>
+      <input id="a-senha" type="password" autocomplete="current-password" required>
+      <button class="botao enviar" type="submit">Entrar</button>
+      <p style="text-align:center;margin:14px 0 0">
+        <button type="button" id="criar" class="link">Primeiro acesso: criar senha</button>
+        &nbsp;·&nbsp;
+        <button type="button" id="esqueci" class="link">Esqueci a senha</button>
+      </p>
+      <div id="a-msg" class="msg oculto"></div>
+    </form>
+  </div>
+
+  <div id="v-verificar" class="caixa status oculto">
+    <h2>Confirme o e-mail</h2>
+    <p>Enviamos um link de confirmação para o e-mail da administração. Abra o e-mail, clique no link e depois volte aqui.</p>
+    <p><button id="ja-confirmei" class="botao">Já confirmei</button> <button id="reenviar" class="botao vazado">Reenviar e-mail</button></p>
+    <div id="v-msg" class="msg oculto"></div>
+  </div>
+
+  <div id="v-negado" class="caixa status oculto">
+    <h2>Acesso restrito</h2>
+    <p>Esta página é só para a administração do movimento.</p>
+  </div>
+
+  <div id="v-painel" class="oculto">
+    <div class="caixa">
+      <h2>Pedidos em análise <span id="n-pendentes" class="contagem"></span></h2>
+      <p class="contagem">Para consultar antecedentes: <a href="https://www.gov.br/pt-br/servicos/emitir-certidao-de-antecedentes-criminais" target="_blank" rel="noopener">certidão da Polícia Federal (gov.br)</a>.</p>
+      <div id="pendentes"></div>
+    </div>
+
+    <div class="caixa">
+      <h2>Membros aprovados <span id="n-aprovados" class="contagem"></span></h2>
+      <div id="aprovados"></div>
+    </div>
+
+    <div class="caixa">
+      <h2>Mural dos membros</h2>
+      <p class="contagem">Este texto aparece para todos os membros aprovados.</p>
+      <textarea id="mural" maxlength="5000"></textarea>
+      <button id="salvar-mural" class="botao" style="margin-top:12px">Salvar mural</button>
+      <div id="m-msg" class="msg oculto"></div>
+    </div>
+
+    <p class="contagem" id="n-recusados"></p>
+  </div>
+</main>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

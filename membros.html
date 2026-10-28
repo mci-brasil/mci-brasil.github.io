@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Área de Membros · MCI</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/membros.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <a class="marca" href="index.html"><img src="img/favicon.png" alt=""><span>MCI</span></a>
+    <div class="acoes">
+      <a href="index.html">Início</a>
+      <button id="sair" class="oculto">Sair</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Área de Membros</h1>
+  <p class="sub">Movimento Conservador Independente</p>
+
+  <div id="v-carregando" class="caixa status"><p>Carregando…</p></div>
+
+  <!-- Visitante: entrar ou solicitar adesão -->
+  <div id="v-fora" class="oculto">
+    <div class="abas">
+      <button id="aba-entrar" class="ativa">Entrar</button>
+      <button id="aba-solicitar">Solicitar adesão</button>
+    </div>
+    <div class="caixa">
+      <form id="f-entrar" novalidate>
+        <label for="e-email">E-mail</label>
+        <input id="e-email" type="email" autocomplete="email" required>
+        <label for="e-senha">Senha</label>
+        <input id="e-senha" type="password" autocomplete="current-password" required>
+        <button class="botao enviar" type="submit">Entrar</button>
+        <p style="text-align:center;margin:14px 0 0"><button type="button" id="esqueci" class="link">Esqueci minha senha</button></p>
+        <div id="e-msg" class="msg oculto"></div>
+      </form>
+      <div id="solicitar-aqui"></div>
+    </div>
+  </div>
+
+  <!-- Formulário de solicitação (movido para dentro da aba ou da caixa "sem pedido") -->
+  <form id="f-solicitar" class="oculto" novalidate>
+    <p style="margin-top:0">Ser membro do MCI é um compromisso. Preencha seus dados com atenção: cada pedido é analisado, incluindo a consulta de antecedentes criminais. <strong>Não aceitamos membros com pendências com a lei.</strong></p>
+
+    <label for="s-nome">Nome completo</label>
+    <input id="s-nome" autocomplete="name" maxlength="120" required>
+
+    <div class="linha">
+      <div>
+        <label for="s-cpf">CPF</label>
+        <input id="s-cpf" inputmode="numeric" placeholder="000.000.000-00" maxlength="14" required>
+      </div>
+      <div>
+        <label for="s-nasc">Data de nascimento</label>
+        <input id="s-nasc" type="date" required>
+      </div>
+    </div>
+
+    <label for="s-mae">Nome completo da mãe <small>(necessário para a consulta de antecedentes)</small></label>
+    <input id="s-mae" maxlength="120" required>
+
+    <div class="linha cidade">
+      <div>
+        <label for="s-cidade">Cidade</label>
+        <input id="s-cidade" autocomplete="address-level2" maxlength="80" required>
+      </div>
+      <div>
+        <label for="s-uf">Estado</label>
+        <select id="s-uf" required>
+          <option value="">UF</option>
+          <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+        </select>
+      </div>
+    </div>
+
+    <label for="s-whats">WhatsApp <small>(com DDD)</small></label>
+    <input id="s-whats" type="tel" inputmode="numeric" placeholder="(15) 99999-9999" maxlength="16" required>
+
+    <label for="s-motivo">Por que você quer fazer parte do MCI?</label>
+    <textarea id="s-motivo" maxlength="2000" required></textarea>
+
+    <div id="campos-conta">
+      <label for="s-email">E-mail <small>(será seu login)</small></label>
+      <input id="s-email" type="email" autocomplete="email" required>
+      <div class="linha">
+        <div>
+          <label for="s-senha">Crie uma senha</label>
+          <input id="s-senha" type="password" autocomplete="new-password" minlength="6" required>
+        </div>
+        <div>
+          <label for="s-senha2">Repita a senha</label>
+          <input id="s-senha2" type="password" autocomplete="new-password" minlength="6" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="consentimento">
+      <input id="s-consent" type="checkbox" required>
+      <label for="s-consent">Autorizo o MCI a usar meu CPF, data de nascimento e nome da mãe <strong>somente</strong> para consultar meus antecedentes criminais. Sei que meus dados ficam visíveis apenas para a administração do movimento e que, se meu pedido for recusado, eles serão apagados.</label>
+    </div>
+
+    <button class="botao enviar" type="submit">Enviar solicitação</button>
+    <div id="s-msg" class="msg oculto"></div>
+  </form>
+
+  <!-- Logado, mas ainda sem pedido -->
+  <div id="v-sem-pedido" class="caixa oculto">
+    <h2>Complete sua solicitação</h2>
+    <div id="solicitar-logado"></div>
+  </div>
+
+  <!-- Situação do pedido -->
+  <div id="v-pendente" class="caixa status oculto">
+    <img class="selo" src="img/selo-mci.png" alt="">
+    <h2>Solicitação em análise</h2>
+    <p>Recebemos seu pedido. Vamos analisar seus dados e daremos retorno em breve.</p>
+    <p id="aviso-verificar" class="oculto">Enviamos um link de confirmação para o seu e-mail. Confirme para garantir que sua conta é sua. <button id="reenviar" class="link">Reenviar e-mail</button></p>
+  </div>
+
+  <div id="v-recusado" class="caixa status oculto">
+    <h2>Solicitação não aprovada</h2>
+    <p>Agradecemos seu interesse no Movimento Conservador Independente. Neste momento seu pedido não foi aprovado, e seus dados pessoais foram apagados.</p>
+  </div>
+
+  <div id="v-membro" class="oculto">
+    <div class="caixa status">
+      <img class="selo" src="img/selo-mci.png" alt="">
+      <h2 id="boas-vindas">Bem-vindo ao MCI</h2>
+      <p>Você é membro aprovado do Movimento Conservador Independente.</p>
+    </div>
+    <div class="caixa">
+      <h2>Mural</h2>
+      <div id="mural" class="mural">Nenhum aviso por enquanto.</div>
+    </div>
+  </div>
+
+  <div id="v-admin" class="caixa status oculto">
+    <h2>Conta da administração</h2>
+    <p><a class="botao" href="admin.html">Abrir painel de administração</a></p>
+  </div>
+</main>
+
+<script type="module" src="js/membros.js"></script>
+</body>
+</html>
