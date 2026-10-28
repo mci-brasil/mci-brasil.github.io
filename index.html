@@ -124,11 +124,6 @@
   .tres p { margin: 0; font-size: 16px; }
   .frase-cidade { font-family: var(--titulo); color: var(--ouro); text-align: center; font-size: clamp(20px, 3vw, 26px); margin: 40px 0 0; letter-spacing: .05em; }
 
-  /* Clube de leitura */
-  .livros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 840px; margin: 28px auto 0; padding: 0; list-style: none; }
-  .livros li { background: #fff; border: 1px solid rgba(200,162,74,.45); padding: 14px 16px; border-radius: 3px; font-size: 16px; }
-  .livros strong { display: block; color: var(--principal); }
-
   /* Participe */
   .participe { text-align: center; }
   .passos { list-style: none; counter-reset: passo; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 840px; margin: 32px auto 0; padding: 0; text-align: left; }
@@ -147,12 +142,10 @@
   @media (max-width: 820px) {
     nav { display: none; }
     .duas-colunas, .cartoes, .tres, .passos { grid-template-columns: 1fr; }
-    .livros { grid-template-columns: 1fr 1fr; }
     section { padding: 56px 0; }
   }
   @media (max-width: 480px) {
     body { font-size: 17px; }
-    .livros { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -166,7 +159,6 @@
         <li><a href="#quem-somos">Quem somos</a></li>
         <li><a href="#principios">Princípios</a></li>
         <li><a href="#ruas">Ruas seguras</a></li>
-        <li><a href="#leitura">Clube de leitura</a></li>
         <li><a href="#participe">Participe</a></li>
         <li><a href="membros.html">Membros</a></li>
       </ul>
@@ -192,9 +184,9 @@
     <div class="container">
       <div class="titulo-secao"><small>QUEM SOMOS</small><h2>Ideias firmes, como uma âncora</h2></div>
       <div class="texto-central">
-        <p>O <strong>Movimento Conservador Independente (MCI)</strong> reúne brasileiros que acreditam em fé, família, liberdade e responsabilidade. Queremos reunir, estudar e agir com seriedade.</p>
-        <p><strong>Somos independentes.</strong> Não pertencemos a nenhum político, partido ou família política. Respeitamos quem pensa diferente, mas não seguimos ídolos: seguimos princípios.</p>
-        <p><strong>Respeitamos a lei e as pessoas.</strong> Convencemos pelo exemplo e pelo argumento.</p>
+        <p>O <strong>Movimento Conservador Independente (MCI)</strong> reúne brasileiros que acreditam em valores que estão se perdendo: fé em Deus, família, patriotismo e liberdade.</p>
+        <p><strong>Somos independentes.</strong> Não pertencemos a nenhum partido político, não seguimos ídolos: seguimos princípios.</p>
+        <p><strong>Acreditamos que este país ainda tem salvação!</strong></p>
       </div>
       <p class="destaque">A âncora é um antigo símbolo cristão de esperança e firmeza. É o que queremos ser: firmes no que acreditamos, em qualquer tempestade.</p>
     </div>
@@ -206,22 +198,22 @@
       <div class="duas-colunas">
         <div class="coluna">
           <h3>ORDEM</h3>
-          <p class="latim">Ordo: o que vale a pena conservar</p>
+          <p class="latim">Ordo: o que vale a pena conservar?</p>
           <ul>
-            <li>Valores cristãos e respeito à fé</li>
-            <li>Família como base da sociedade</li>
-            <li>Defesa da vida</li>
-            <li>Segurança pública forte e cumprimento da lei</li>
+            <li>O Estado é laico, mas não é ateu! Respeitamos os valores religiosos e as religiões, mas repudiamos qualquer tipo de fanatismo.</li>
+            <li>Família é a base de qualquer sociedade.</li>
+            <li>Somos pró-vida.</li>
+            <li>Segurança pública forte e rígida: a vítima vem antes do criminoso!</li>
           </ul>
         </div>
         <div class="coluna liberdade">
           <h3>LIBERDADE</h3>
           <p class="latim">Libertas: o espaço de cada cidadão</p>
           <ul>
-            <li>Liberdade econômica e livre iniciativa</li>
-            <li>Estado pequeno e eficiente</li>
-            <li>Menos impostos</li>
-            <li>Armamentistas: pelo direito à legítima defesa</li>
+            <li>Liberdade econômica.</li>
+            <li>Estado pequeno e eficiente, menos impostos.</li>
+            <li>Contra cotas raciais e a favor de cotas sociais.</li>
+            <li>Armamentistas: todo cidadão deve ter o direito de proteger a sua família e o seu patrimônio.</li>
           </ul>
         </div>
       </div>
@@ -232,65 +224,47 @@
     <div class="container">
       <div class="titulo-secao"><small>NO QUE ACREDITAMOS</small><h2>Nossas posições</h2></div>
       <div class="cartoes">
-        <div class="cartao"><h3>Vida</h3><p>Somos contra o aborto. Aceitamos as exceções de estupro, risco de vida para a mãe e anencefalia.</p></div>
-        <div class="cartao"><h3>Família</h3><p>A família é a primeira escola, o primeiro abrigo e a base de uma sociedade saudável.</p></div>
-        <div class="cartao"><h3>Educação</h3><p>Escola é lugar de ensinar a pensar, não de doutrinar. Os pais devem saber o que seus filhos aprendem.</p></div>
-        <div class="cartao"><h3>Segurança</h3><p>Segurança pública forte e penas duras para quem comete crimes. A vítima vem antes do criminoso.</p></div>
-        <div class="cartao"><h3>Drogas</h3><p>Totalmente contra as drogas ilícitas e contra sua liberação. Tratamento para quem quer sair delas.</p></div>
-        <div class="cartao"><h3>Economia</h3><p>Quem trabalha e empreende precisa de menos impostos, menos burocracia e mais liberdade.</p></div>
+        <div class="cartao"><h3>Vida</h3><p>Somos contra o aborto, com exceção dos casos de estupro, anencefalia ou risco de vida para a mãe.</p></div>
+        <div class="cartao"><h3>Família</h3><p>É o nosso bem mais precioso e a base de uma sociedade mais justa e íntegra.</p></div>
+        <div class="cartao"><h3>Educação</h3><p>Escola é lugar de ensinar a pensar, não de doutrinar. Os pais devem saber o que seus filhos aprendem. Nossos filhos devem aprender coisas úteis para a vida, como mecânica básica e sistema tributário, e não pautas progressistas como identidade de gênero.</p></div>
+        <div class="cartao"><h3>Segurança</h3><p>Penas mais severas para que o criminoso pense duas vezes antes de prejudicar um trabalhador. Redução da maioridade penal: se já pode votar, já pode responder pelos seus crimes!</p></div>
+        <div class="cartao"><h3>Drogas</h3><p>Somos contra a liberação das drogas e apoiamos o tratamento dos usuários e, quando necessário, a internação dentro da lei, para que voltem a ser cidadãos que contribuem para a nossa sociedade. O vício destrói famílias e muitas vezes é o caminho para o crime. As drogas financiam o crime organizado.</p></div>
+        <div class="cartao"><h3>Economia</h3><p>Quem trabalha e empreende precisa de menos impostos, menos burocracia e mais liberdade. O trabalho é o que faz o país andar!</p></div>
       </div>
       <div class="rejeitamos">
-        <h3>O QUE REJEITAMOS</h3>
-        <p>Socialismo e comunismo. Racismo, homofobia, fascismo e nazismo. Extremismo e idolatria de políticos.</p>
+        <h3>O QUE REJEITAMOS?</h3>
+        <p>Qualquer tipo de regime extremista e/ou totalitário, socialismo, comunismo, fascismo...<br>E qualquer tipo de preconceito, racismo, homofobia... <em>Todos somos iguais!</em></p>
       </div>
     </div>
   </section>
 
   <section class="cidade" id="ruas">
     <div class="container">
-      <div class="titulo-secao"><small>RUAS SEGURAS</small><h2>Cidades seguras para todos</h2></div>
+      <div class="titulo-secao"><small>RUAS SEGURAS</small><h2>Cidades mais seguras para todos</h2></div>
       <div class="texto-central">
-        <p>Idosos, mulheres e trabalhadores não podem ter medo de andar pelas ruas da própria cidade. Queremos acolher quem precisa sem financiar quem comete crimes.</p>
+        <p>Chega de dependentes químicos em situação de rua cometendo crimes para sustentar o vício. Pagamos impostos demais para não ter segurança nem para andar pelas ruas!</p>
       </div>
       <div class="tres">
-        <div><h3>Tratamento</h3><p>Parcerias com clínicas de reabilitação e tratamento gratuito para quem quer sair das drogas.</p></div>
-        <div><h3>Retorno</h3><p>Passagem de volta para quem vem de outra cidade e quer voltar para perto da sua família.</p></div>
-        <div><h3>Lei</h3><p>Quem agride, furta ou ameaça é caso de polícia, e precisa responder pelo que fez.</p></div>
+        <div><h3>Tratamento</h3><p>Deve ser primeiramente oferecido tratamento gratuito para essas pessoas saírem das ruas.</p></div>
+        <div><h3>Retorno</h3><p>Caso recusem o tratamento, oferecer transporte para que voltem às cidades de onde saíram. O que não podemos é continuar servindo de 2 a 3 refeições e pagando auxílio para que fiquem confortáveis na situação em que se encontram.</p></div>
+        <div><h3>Lei</h3><p>Quem agride, furta ou ameaça deve responder pelos seus atos.</p></div>
       </div>
-      <p class="frase-cidade">Acolher sim. Sustentar o crime, não.</p>
-    </div>
-  </section>
-
-  <section class="fundo-marfim" id="leitura">
-    <div class="container">
-      <div class="titulo-secao"><small>O QUE FAZEMOS</small><h2>Clube de leitura</h2></div>
-      <div class="texto-central">
-        <p>Antes de agir, estudar. Nossos encontros presenciais começam como um clube de leitura: lemos, conversamos e formamos pessoas preparadas para defender boas ideias com bons argumentos.</p>
-      </div>
-      <ul class="livros">
-        <li><strong>Roger Scruton</strong>Como ser um conservador</li>
-        <li><strong>Frédéric Bastiat</strong>A Lei</li>
-        <li><strong>Edmund Burke</strong>Reflexões sobre a Revolução na França</li>
-        <li><strong>Friedrich Hayek</strong>O Caminho da Servidão</li>
-        <li><strong>Thomas Sowell</strong>Os Intelectuais e a Sociedade</li>
-        <li><strong>João Pereira Coutinho</strong>As Ideias Conservadoras</li>
-      </ul>
+      <p class="frase-cidade">Cadeia é para o bandido pagar pelos seus crimes, e não para tirar férias.</p>
     </div>
   </section>
 
   <section class="participe" id="participe">
     <div class="container">
-      <div class="titulo-secao"><small>PARTICIPE</small><h2>Como se tornar membro</h2></div>
+      <div class="titulo-secao"><small>PARTICIPE</small><h2>Torne-se membro</h2></div>
       <div class="texto-central">
-        <p>Ser membro do MCI é um compromisso. Por isso, cada pedido é analisado com cuidado.</p>
+        <p>Apoie o nosso movimento por um país mais justo. É gratuito!</p>
       </div>
       <ol class="passos">
-        <li><strong>Solicitação</strong>Você faz seu pedido na área de membros.</li>
-        <li><strong>Análise</strong>Verificamos seus dados, incluindo antecedentes criminais.</li>
-        <li><strong>Aprovação</strong>Aprovado, você recebe acesso à área de membros.</li>
+        <li><strong>Solicitação</strong>Faça seu cadastro.</li>
+        <li><strong>Análise</strong>O cadastro passa por análise, inclusive de antecedentes criminais.</li>
+        <li><strong>Aprovado</strong>Ao ser aprovado, você terá acesso à área de membros.</li>
       </ol>
-      <p class="aviso">Não aceitamos membros com pendências com a lei.</p>
-      <a class="botao cheio" href="membros.html#solicitar">Solicitar adesão</a>
+      <p style="margin-top:36px"><a class="botao cheio" href="membros.html#solicitar">Solicitar adesão</a></p>
       <p style="margin-top:16px;font-size:16px">Já é membro? <a href="membros.html">Entrar na área de membros</a></p>
     </div>
   </section>
